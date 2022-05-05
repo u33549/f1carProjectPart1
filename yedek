@@ -1,0 +1,41 @@
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.canvas.width = window.innerHeight;
+ctx.canvas.height = window.innerHeight;
+
+function ball(x, y) {
+  this.x = x;
+  this.y = y;
+  this.angle = 0;
+  this.draw = function () {
+    var self = this;
+    ctx.arc(
+      self.x,        // Merkez noktasının yatay konumu
+      self.y,        // Merkez noktasının dikey konumu
+      30,         // Yarıçap uzunluğu
+      0,          // Başlangıç açısı
+      Math.PI * 2 // Bitiş açısı
+     );
+     ctx.stroke();  };
+}
+
+var ball01 = new ball(500, 500);
+var P0 = 0,
+  P1 = 0,
+  Z0 = 9,
+  Z1 = 3;
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (ball01.angle == 360) {
+    ball01.angle = 0;
+  }
+  ball01.angle += 1; //角度
+  var radian = ball01.angle * (Math.PI / 180); //弧度
+
+  ball01.x = 167 + 140 * Math.cos(radian) - 24 / 2; //小球半径
+  ball01.y = 100 + 40 * Math.sin(radian) - 24 / 2;
+  ball01.draw();
+
+  raf = window.requestAnimationFrame(draw);
+}
+draw();

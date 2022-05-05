@@ -1,0 +1,43 @@
+#canvas {
+    /* margin: 5vh 10vh 0px 10vh; */
+    width: 80vh;
+    height: 50vh;
+    /* background-color: black; */
+    /* z-index: 1; */
+    /*border: 10px solid cyan;*/
+
+}
+
+
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+#btn1,#btn2{
+    width:40vw;
+    height:40vh;
+    border:none;
+    font-size:10vw;
+    z-index:1;
+}
+#btn1:hover,#btn2:hover{
+    background-color:white;
+   
+}
+
+#btn1{
+    background-color:green;
+}
+#btn2{
+    background-color:red;
+}
+
+.container{
+    width:100vw;
+    display:flex;
+    justify-content: center;
+}
